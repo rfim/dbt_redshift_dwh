@@ -4,7 +4,7 @@
         alias='stg_dim_currency',
         schema=var('silver_schema'),
         unique_key='currency_id',
-        incremental_stragey='delete+insert'
+        incremental_strategy='delete+insert'
     )
 }}
 

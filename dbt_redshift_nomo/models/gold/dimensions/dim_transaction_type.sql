@@ -4,7 +4,7 @@
         alias='dim_transaction_type',
         schema=var('gold_schema'),
         unique_key='transaction_type_id',
-        incremental_stragey='delete+insert'
+        incremental_strategy='delete+insert'
     )
 }}
 

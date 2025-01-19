@@ -4,7 +4,7 @@
         alias='fact_investments',
         schema=var('gold_schema'),
         unique_key='investment_id',
-        incremental_stragey='delete+insert',
+        incremental_strategy='delete+insert'
         primary_key='investment_id',
         distribution='even'
     )

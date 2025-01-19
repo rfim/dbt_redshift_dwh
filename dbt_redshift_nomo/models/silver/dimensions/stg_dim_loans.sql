@@ -4,7 +4,7 @@
         alias='stg_dim_loans',
         schema=var('silver_schema'),
         unique_key='loan_id',
-        incremental_stragey='delete+insert'
+        incremental_strategy='delete+insert'
     )
 }}
 

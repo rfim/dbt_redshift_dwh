@@ -4,7 +4,7 @@
         alias='dim_date',
         schema=var('gold_schema'),
         unique_key='date_id',
-        incremental_stragey='delete+insert'
+        incremental_strategy='delete+insert'
     )
 }}
 

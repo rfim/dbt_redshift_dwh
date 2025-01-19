@@ -4,7 +4,7 @@
         alias='fact_daily_balances',
         schema=var('gold_schema'),
         unique_key='balance_id',
-        incremental_stragey='delete+insert',
+        incremental_strategy='delete+insert'
         primary_key='balance_id',
         distribution='even'
     )

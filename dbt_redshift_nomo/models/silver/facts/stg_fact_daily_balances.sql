@@ -4,7 +4,7 @@
         alias='stg_fact_daily_balances',
         schema=var('silver_schema'),
         unique_key='balance_id',
-        incremental_stragey='delete+insert',
+        incremental_strategy='delete+insert'
         primary_key='balance_id',
         sort_key='balance_id',
         distribution='even'

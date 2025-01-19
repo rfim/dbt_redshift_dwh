@@ -4,7 +4,7 @@
         alias='dim_location',
         schema=var('gold_schema'),
         unique_key='location_id',
-        incremental_stragey='delete+insert'
+        incremental_strategy='delete+insert'
     )
 }}
 

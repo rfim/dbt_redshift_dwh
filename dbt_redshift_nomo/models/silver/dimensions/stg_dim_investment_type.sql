@@ -4,7 +4,7 @@
         alias='stg_dim_investment_type',
         schema=var('silver_schema'),
         unique_key='investment_type_id',
-        incremental_stragey='delete+insert'
+        incremental_strategy='delete+insert'
     )
 }}
 

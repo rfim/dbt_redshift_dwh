@@ -4,7 +4,7 @@
         alias='dim_customer',
         schema=var('gold_schema'),
         unique_key='customer_id',
-        incremental_stragey='delete+insert'
+        incremental_strategy='delete+insert'
     )
 }}
 

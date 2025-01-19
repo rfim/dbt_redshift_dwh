@@ -4,7 +4,7 @@
         alias='dim_channel',
         schema=var('gold_schema'),
         unique_key='channel_id',
-        incremental_stragey='delete+insert'
+        incremental_strategy='delete+insert'
     )
 }}
 
