@@ -1,0 +1,12 @@
+dbt_redshift_nomo:
+  outputs:
+    dev:
+      dbname: dev
+      host: nomo-demo.038462777199.eu-west-2.redshift-serverless.amazonaws.com
+      password: ChelseaChelsea2025-demoJanuary
+      port: 5439
+      schema: dev_silver
+      threads: 1
+      type: redshift
+      user: admin
+  target: dev
