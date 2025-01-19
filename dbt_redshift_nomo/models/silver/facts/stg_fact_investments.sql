@@ -4,7 +4,7 @@
         alias='stg_fact_investments',
         schema=var('silver_schema'),
         unique_key='investment_id',
-        incremental_strategy='delete+insert'
+        incremental_strategy='delete+insert',
         primary_key='investment_id',
         sort_key='investment_id',
         distribution='even'
