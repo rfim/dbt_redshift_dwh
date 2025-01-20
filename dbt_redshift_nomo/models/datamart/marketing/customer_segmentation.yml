@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: customer_segmentation
+    description: "Customer segmentation based on transaction behavior"
+    columns:
+      - name: account_number
+        description: "Unique identifier for each customer account"
+        tests:
+          - unique
+          - not_null
+      - name: num_transactions
+        description: "Total number of transactions made by the customer"
+      - name: avg_transaction_amount
+        description: "Average transaction amount made by the customer"
+      - name: customer_segment
+        description: "Customer segment based on average transaction amount"
+        tests:
+          - accepted_values:
+              values: ['High', 'Medium', 'Low']

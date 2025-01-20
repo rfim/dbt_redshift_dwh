@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: daily_active_users
+    description: "Daily Active Users (DAU) based on customer interactions"
+    columns:
+      - name: day
+        description: "Day of the interaction, truncated to the first day of the day"
+        tests:
+          - not_null
+      - name: daily_active_users
+        description: "Number of distinct active customers in the day"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["High", "Medium", "Low"]  # You may adjust this to match your requirements, such as checking if values are within a valid range

@@ -50,3 +50,13 @@ models:
       facts:
         +materialized: table
         tags: [ 'facts' ]
+    datamart:
+      marketing:
+        +materialized: view
+        tags: ['datamart']
+      finance:
+        +materialized: view
+        tags: [ 'datamart' ]
+      operation:
+        +materialized: view
+        tags: [ 'datamart' ]

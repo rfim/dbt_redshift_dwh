@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: monthly_active_users
+    description: "Monthly Active Users (MAU) based on customer interactions"
+    columns:
+      - name: month
+        description: "Month of the interaction, truncated to the first day of the month"
+        tests:
+          - not_null
+      - name: monthly_active_users
+        description: "Number of distinct active customers in the month"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["High", "Medium", "Low"]  # You may adjust this to match your requirements, such as checking if values are within a valid range
