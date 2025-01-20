@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: transaction_volume_by_time
+    description: "Insight on transaction volume and total transaction value by hour of the day"
+    columns:
+      - name: transaction_hour
+        description: "The hour of the day when the transaction occurred"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+
+      - name: total_transactions
+        description: "The total number of transactions that occurred in each hour"
+        tests:
+          - not_null
+          - greater_than_or_equal_to:
+              value: 0
+
+      - name: total_transaction_value
+        description: "The total transaction amount that occurred in each hour"
+        tests:
+          - not_null
+          - greater_than_or_equal_to:
+              value: 0
+
+      - name: transaction_id
+        description: "Unique identifier for each transaction"
+        tests:
+          - unique
+
+      - name: account_id
+        description: "Unique identifier for the account"
+        tests:
+          - not_null

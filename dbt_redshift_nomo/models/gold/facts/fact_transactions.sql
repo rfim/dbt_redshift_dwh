@@ -40,7 +40,10 @@ SELECT
     l.postal_code,
     l.country,
     transaction_amount,
-    transaction_status
+    transaction_status,
+    s.transaction_type_id,
+    s.account_id,
+    a.created_at as account_date
 FROM source_data s
 LEFT JOIN {{ ref('dim_date') }} as d on s.date_id = d.date_id
 LEFT JOIN {{ ref('dim_account') }} as a on s.account_id = a.account_id

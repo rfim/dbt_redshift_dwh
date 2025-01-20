@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: general_ledger
+    description: "A general ledger summarizing credits and debits per account per month"
+    columns:
+      - name: account_id
+        description: "Unique identifier for the customer account"
+        tests:
+          - not_null
+          - unique
+
+      - name: transaction_month
+        description: "The month in which the transaction occurred"
+        tests:
+          - not_null
+
+      - name: total_credit
+        description: "The total credit amount for the given month"
+        tests:
+          - not_null
+
+      - name: total_debit
+        description: "The total debit amount for the given month"
+        tests:
+          - not_null
+
+      - name: net_balance
+        description: "The net balance after subtracting debits from credits"
+        tests:
+          - not_null
+
+      - name: transaction_type_name
+        description: "Type of transaction (Deposit, Withdrawal, Payment, etc.)"
+        tests:
+          - accepted_values:
+              values: ['Deposit', 'Payment', 'Withdrawal', 'Loan Payment']
+
+      - name: transaction_amount
+        description: "The transaction amount for the given transaction"
+        tests:
+          - not_null
+          - greater_than_or_equal_to:
+              value: 0
